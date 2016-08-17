@@ -1,10 +1,4 @@
-FROM debian:jessie
-
-ENV DEBIAN_FRONTEND=noninteractive 
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
-
-RUN apt-get update && apt-get install -y -q python3-pip 
+FROM python:3
 
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 RUN pip3 install -qr /tmp/requirements.txt
